@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Helvetica';
+  font-size: 14px;
 }
 
 /* ---- LAYOUT SOTTO ---- */
@@ -52,7 +53,10 @@
   justify-content: space-between;
 }
 
-#userPicName{
+#userPicName,
+#userIcons,
+#currentNameChat,
+#SameIconsChat{
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -64,9 +68,17 @@ img {
   margin-right: 15px;
 }
 
+i{
+  color: #B1B1B1;
+  margin-right: 18px;
+  font-size: 24px;
+}
+
 #currentChat{
   width: 66%;
   height: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 /* central main */
@@ -91,6 +103,9 @@ main{
   width: 100%;
   height: 13%;
   background-color: #76DCFF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #search{
@@ -113,6 +128,10 @@ main{
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.chat:hover{
+  background-color: #E9EBEB;
 }
 
 /* rightblock */
