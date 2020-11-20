@@ -1,0 +1,50 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.vh{
+  height: 100vh;
+  position: relative;
+}
+
+#col--up{
+  background-color: #009988;
+  height: 15%;
+}
+
+#col--down{
+  background-color: #D7DBD4;
+  height: 85%;
+}
+
+#myspace{
+  height: 94%;
+  width: 80%;
+  position: absolute;
+  background-color: yellow;
+  top: 3%;
+  left: 10%;
+}
+
+/* .sxblock{
+  width: 34%;
+  height: 100%;
+  background-color: white;
+  border-right: 1px solid #D1D2D2;
+  position: absolute;
+  left: 0;
+} */
+
+.topblock{
+  background-color: #EAEAEA;
+  height: 70px;
+  width: 80%;
+  position: fixed;
+  top: 3%;
+}
+
+#userblock{
+
+}
