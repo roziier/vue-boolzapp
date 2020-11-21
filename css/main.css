@@ -104,14 +104,38 @@ main{
   height: 13%;
   background-color: #76DCFF;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
+}
+
+.fa-bell-slash{
+  color: white;
+  font-size: 40px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 #search{
   width: 100%;
   height: 5%;
   background-color: #FAFAFA;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#search input[type=text] {
+ width: 92%;
+ box-sizing: border-box;
+ border: 1px solid #ccc;
+ border-radius: 4px;
+ font-size: 12px;
+ background-color: white;
+ background-image: url(../img/search-solid.svg);
+ background-size: 22px;
+ background-position: left;
+ background-repeat: no-repeat;
+ padding: 6px 40px;
 }
 
 .blockchat{
@@ -154,4 +178,21 @@ main{
   width: 100%;
   height: 12%;
   background-color: #F4EEE9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#textSpace input{
+  height: 70%;
+  width: 80%;
+  padding: 10px;
+}
+
+#textSpace i{
+  margin-left: 25px;
+  margin-right: 25px;
+  text-align: center;
+  font-size: 25px;
+  color: #697376;
 }
