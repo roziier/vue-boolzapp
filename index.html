@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Boolzap</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
@@ -80,11 +81,11 @@
             </div>
             <!-- blocco chat -->
             <div class="blockchat">
-              <div class="chat">
-                <img src="img/avatar_1.jpg" style="max-width:70px;max-height:70px;" alt="">
+              <div class="chat" v-for="(value,i) in items" :key="i === first">
+                <img :src"value.img" style="max-width:70px;max-height:70px;" alt="">
                 <div class="smatt">
-                  <p><strong>Pierangelo</strong></p>
-                  <p class="refMex">iL MESSAGGIO...</p>
+                  <p><strong>{{value.name}}</strong></p>
+                  <p class="refMex">{{value.msg}}</p>
                 </div>
               </div>
               <div class="chat">
