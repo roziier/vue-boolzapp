@@ -1,38 +1,54 @@
 new Vue({
   el: '#app',
   data: {
+    indiceContattoAttivo: 0,
     items: [
 
     // FIRST
     {
       name: 'Pierangelo',
       img: 'img/avatar_1.jpg',
-      lastseen: '21/11/20 at 20.00pm',
-      msg: 'Ciao come stai?',
-      first: true
+
+      chat: [
+      {
+        messaggio: 'Come stai oggi?',
+        orario: '21/11/20 8:00am',
+        stato: 'inviato'
+      },
+      {
+        messaggio: 'sto bene grazie',
+        orario: '21/11/20 8:10am',
+        stato: 'ricevuto'
+      }
+      ],
     },
 
     // SECOND
     {
       name: 'Giuseppe',
       img: 'img/avatar_2.jpg',
-      lastseen: '21/11/20 at 19.00pm',
-      msg: 'Bene tu?',
-      second: true
+      chat: [
+      {
+        messaggio: 'Come stai oggi?',
+        orario: '21/11/20 8:30am',
+        stato: 'inviato'
+      },
+      {
+        messaggio: 'cosi cosi',
+        orario: '21/11/20 8:40am',
+        stato: 'ricevuto'
+      }
+      ],
+    }
+
+  ]},
+
+  methods: {
+    attivaUser: function (indiceAttivo) {
+      this.indiceContattoAttivo = indiceAttivo;
     },
 
-    // THIRD
-    {
-      name: 'Claudia',
-      img: 'img/avatar_3.jpg',
-      lastseen: '21/11/20 at 18.00pm',
-      msg: 'Abbastanza bene dai',
-      third: true
-    }
-  ],
-
-    methods: {
-
-    }
   }
+
+
 })
