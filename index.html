@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <title>Boolzap</title>
 
-    <!-- <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <link rel="stylesheet" href="css/main.css">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   </head>
@@ -47,7 +47,7 @@
             <img :src="items[indiceContattoAttivo].img" style="max-width:60px;max-height:60px;" alt="">
             <div class="smatt">
               <p><strong>{{items[indiceContattoAttivo].name}}</strong></p>
-              <p id="update">Ultimo accesso oggi alle....</p>
+              <p id="update">Ultimo accesso: {{items[indiceContattoAttivo].lastview}}</p>
             </div>
 
 
@@ -82,7 +82,7 @@
             </div>
             <!-- blocco chat -->
             <div class="blockchat">
-              <div class="chat" v-for="(contatto, i) in items" @click="attivaUser(i)">
+              <div class="chat" v-for="(contatto,i) in items" @click="attivaUser(i)">
                 <img :src="contatto.img" style="max-width:70px;max-height:70px;" alt="">
                 <div class="smatt">
                   <p><strong>{{contatto.name}}</strong></p>
@@ -131,23 +131,23 @@
           <div class="rightblock">
             <div id="chatSpace">
 
-              <div class="chatBoxL" id="firstMarg">
-                <div class="leChat">
-                  <div class="text">Ciao vado a fare una bella passeggiata.... oggi fa molto freddo e devo ricordarmi di coprirmi molto bene eheheheheh</div>
-                  <div class="time">21/11/2020 20:34</div>
+              <div v-for="messaggio in items[indiceContattoAttivo].chat" :class="stato ? chatBoxR : chatBoxL"  >
+                <div :class="stato ? riChat : leChat">
+                  <div class="text">{{messaggio.messaggio}}</div>
+                  <div class="time">{{messaggio.orario}}</div>
 
                 </div>
               </div>
 
-              <div class="chatBoxR">
+              <!-- <div class="chatBoxR">
                 <div class="riChat">
                   <div class="text">Ook</div>
                   <div class="time">21/11/2020 20:34</div>
 
                 </div>
-              </div>
+              </div> -->
 
-              <div class="chatBoxL">
+              <!-- <div class="chatBoxL">
                 <div class="leChat">
                   <div class="text">Prenditi anche l'ombrello</div>
                   <div class="time">21/11/2020 20:34</div>
@@ -161,7 +161,7 @@
                   <div class="time">21/11/2020 20:34</div>
 
                 </div>
-              </div>
+              </div> -->
 
 
             </div>
