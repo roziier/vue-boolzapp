@@ -131,8 +131,8 @@
           <div class="rightblock">
             <div id="chatSpace">
 
-              <div v-for="messaggio in items[indiceContattoAttivo].chat" :class="stato ? chatBoxR : chatBoxL"  >
-                <div :class="stato ? riChat : leChat">
+              <div v-for="messaggio in items[indiceContattoAttivo].chat" :class="stato ? 'chatBoxR' : 'chatBoxL'"  >
+                <div :class="stato ? 'riChat' : 'leChat'">
                   <div class="text">{{messaggio.messaggio}}</div>
                   <div class="time">{{messaggio.orario}}</div>
 
