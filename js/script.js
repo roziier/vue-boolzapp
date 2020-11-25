@@ -20,7 +20,7 @@ var app = new Vue({
         orario: '21/11/20 8:10am',
         stato: 'ricevuto'
       }
-      ],
+      ]
     },
 
     // SECOND
@@ -38,7 +38,7 @@ var app = new Vue({
         orario: '21/11/20 8:40am',
         stato: 'ricevuto'
       }
-      ],
+      ]
     }
 
   ]},
@@ -46,9 +46,9 @@ var app = new Vue({
   methods: {
     attivaUser: function (indiceAttivo) {
       this.indiceContattoAttivo = indiceAttivo;
-    },
+    }
 
   }
 
 
-})
+});
