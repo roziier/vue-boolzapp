@@ -44,7 +44,9 @@
         </div>
         <div class="" id="currentChat">
           <div id="currentNameChat">
-            <img :src="items[indiceContattoAttivo].img" style="max-width:60px;max-height:60px;" alt="">
+            <img :src="items[indiceContattoAttivo].img"
+                 style="max-width:60px;max-height:60px;"
+            >
             <div class="smatt">
               <p><strong>{{items[indiceContattoAttivo].name}}</strong></p>
               <p id="update">Ultimo accesso: {{items[indiceContattoAttivo].lastview}}</p>
@@ -82,8 +84,13 @@
             </div>
             <!-- blocco chat -->
             <div class="blockchat">
-              <div class="chat" v-for="(contatto,i) in items" @click="attivaUser(i)">
-                <img :src="contatto.img" style="max-width:70px;max-height:70px;" alt="">
+              <div class="chat"
+                   v-for="(contatto,i) in items"
+                   @click="attivaUser(i)"
+              >
+                <img :src="contatto.img"
+                     style="max-width:70px;max-height:70px;"
+                >
                 <div class="smatt">
                   <p><strong>{{contatto.name}}</strong></p>
                   <p class="refMex">
@@ -91,38 +98,7 @@
                   </p>
                 </div>
               </div>
-              <!-- <div class="chat">
-                <img src="img/avatar_3.jpg" style="max-width:70px;max-height:70px" alt="">
-                <div class="smatt">
-                  <p><strong>Giuseppe</strong></p>
-                  <p class="refMex">iL MESSAGGIO...</p>
-                </div>
 
-              </div>
-              <div class="chat">
-                <img src="img/avatar_7.jpg" style="max-width:70px;max-height:70px" alt="">
-                <div class="smatt">
-                  <p><strong>Claudia</strong></p>
-                  <p class="refMex">iL MESSAGGIO...</p>
-                </div>
-
-              </div>
-              <div class="chat">
-                <img src="img/avatar_8.jpg" style="max-width:70px;max-height:70px" alt="">
-                <div class="smatt">
-                  <p><strong>Antonio</strong></p>
-                  <p class="refMex">iL MESSAGGIO...</p>
-                </div>
-
-              </div>
-              <div class="chat">
-                <img src="img/avatar_io.jpg" style="max-width:70px;max-height:70px" alt="">
-                <div class="smatt">
-                  <p><strong>Patrizia</strong></p>
-                  <p class="refMex">iL MESSAGGIO...</p>
-                </div>
-
-              </div> -->
 
             </div>
           </div>
@@ -131,43 +107,25 @@
           <div class="rightblock">
             <div id="chatSpace">
 
-              <div v-for="messaggio in items[indiceContattoAttivo].chat" :class="stato ? 'chatBoxR' : 'chatBoxL'"  >
-                <div :class="stato ? 'riChat' : 'leChat'">
+              <div v-for="messaggio in items[indiceContattoAttivo].chat"
+                   :class="messaggio.stato ? 'chatBoxR' : 'chatBoxL'"
+              >
+                <div :class="messaggio.stato ? 'riChat' : 'leChat'">
+
                   <div class="text">{{messaggio.messaggio}}</div>
                   <div class="time">{{messaggio.orario}}</div>
 
                 </div>
               </div>
-
-              <!-- <div class="chatBoxR">
-                <div class="riChat">
-                  <div class="text">Ook</div>
-                  <div class="time">21/11/2020 20:34</div>
-
-                </div>
-              </div> -->
-
-              <!-- <div class="chatBoxL">
-                <div class="leChat">
-                  <div class="text">Prenditi anche l'ombrello</div>
-                  <div class="time">21/11/2020 20:34</div>
-
-                </div>
-              </div>
-
-              <div class="chatBoxR">
-                <div class="riChat">
-                  <div class="text">That's what he said</div>
-                  <div class="time">21/11/2020 20:34</div>
-
-                </div>
-              </div> -->
-
-
             </div>
+
+            <!-- messaggio -->
             <div id="textSpace">
               <i class="far fa-smile"></i>
-              <input type="text" placeholder="Scrivi un messaggio">
+              <input type="text"
+                     placeholder="Scrivi un messaggio"
+                     v-model="mymex"
+                     v-on:keyup.enter="addNewMex">
               <i class="fas fa-microphone"></i>
 
             </div>

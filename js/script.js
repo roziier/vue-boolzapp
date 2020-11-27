@@ -2,6 +2,7 @@ var app = new Vue({
   el: '#app',
   data: {
     indiceContattoAttivo: 0,
+    mymex: '',
     items: [
 
     // FIRST
@@ -30,12 +31,12 @@ var app = new Vue({
       lastview: '21/11/20 8.00am',
       chat: [
       {
-        messaggio: 'Come stai oggi?',
+        messaggio: 'Usciamo a correre?',
         orario: '21/11/20 8:30am',
         stato: false
       },
       {
-        messaggio: 'cosi cosi',
+        messaggio: 'A pra foco',
         orario: '21/11/20 8:40am',
         stato: true
       }
@@ -47,7 +48,21 @@ var app = new Vue({
   methods: {
     attivaUser: function (indiceAttivo) {
       this.indiceContattoAttivo = indiceAttivo;
+    },
+
+    addNewMex: function (){
+      if (this.mymex != "") {
+        this.items[this.indiceContattoAttivo].chat.push({
+          messaggio: this.mymex,
+          orario: '21/11/20 12:30am',
+          stato: true
+        });
+        this.mymex = "";
+
+      }
+
     }
+
 
   }
 
