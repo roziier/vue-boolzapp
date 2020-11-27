@@ -7,19 +7,14 @@ var app = new Vue({
 
     // FIRST
     {
-      name: 'Pierangelo',
+      name: 'Michael Boss',
       img: 'img/avatar_1.jpg',
       lastview: '21/11/20 8.30am',
       chat: [
       {
-        messaggio: 'Come stai oggi?',
+        messaggio: 'Hello there!',
         orario: '21/11/20 8:00am',
         stato: true
-      },
-      {
-        messaggio: 'sto bene grazie',
-        orario: '21/11/20 8:10am',
-        stato: false
       }
       ]
     },
@@ -58,9 +53,21 @@ var app = new Vue({
           stato: true
         });
         this.mymex = "";
-
       }
+    },
 
+    receiveMsg: function (){
+
+        this.items[this.indiceContattoAttivo].chat.push({
+          messaggio: 'THAT\'S WHAT SHE SAID! AHAHAHAH',
+          orario: '21/11/20 12:30am',
+          stato: false
+        });
+
+    },
+
+    delayMsg: function(){
+      setTimeout(this.receiveMsg, 2000);
     }
 
 

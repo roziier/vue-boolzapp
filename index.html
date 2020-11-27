@@ -125,7 +125,7 @@
               <input type="text"
                      placeholder="Scrivi un messaggio"
                      v-model="mymex"
-                     v-on:keyup.enter="addNewMex">
+                     v-on:keyup.enter="addNewMex(), delayMsg()">
               <i class="fas fa-microphone"></i>
 
             </div>
